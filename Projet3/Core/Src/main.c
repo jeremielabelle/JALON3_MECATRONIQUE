@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "controlStepMotor.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -64,13 +65,13 @@ static void MX_TIM10_Init(void);
 static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
 //void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi);
-
+void ADCconversion(float* ptrADCvalueFloat, int nSamples);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 int cg = 1;
-float ADCvalueFloat =0;
+float ADCvalueFloat = 0;
 
 /* USER CODE END 0 */
 
@@ -141,25 +142,21 @@ int main(void)
 		  // fin processus 1000 Hz
 		  //Processus 10 Hz v
 		  if ((cg % 100) == 0){
-			 ;
+			  ADCconversion(&ADCvalueFloat, 5);
 		  }
 
-		  // Processus 10 Hz intercalé v
+		  // Processus 10 Hz intercalé
 		  if (((cg + 50) % 100) == 0){
-			  ;
+			  if (ADCvalueFloat > 1.65) fonctionControlMoteur(-1);
+			  if (ADCvalueFloat <= 1.65) fonctionControlMoteur(1);
+
 		  }
 
 		  // Processus 2 Hz v
 		  if ((cg % 500) == 0){
-			  for (int i=0; i<5; i++){
-				HAL_ADC_Start(&hadc1);
-				HAL_ADC_PollForConversion(&hadc1, 1000);
-				ADCvalueFloat += (float)HAL_ADC_GetValue(&hadc1)/4095.0*3.3;
-			  }
-			  ADCvalueFloat = ADCvalueFloat/5;
+
 			  sprintf(print_buffer, "   %5.5f   ", ADCvalueFloat);
 			  ILI9341_Draw_Text(print_buffer, 10, 90, GREEN, 1, BLACK);
-			  ADCvalueFloat = 0;
 		  }
 
 		  // GESTION chien de garde cg
@@ -459,6 +456,15 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void ADCconversion(float* ptrADCvalueFloat, int nSamples){
+	*ptrADCvalueFloat = 0;
+
+	for (int i=0; i<nSamples; i++){
+	HAL_ADC_Start(&hadc1);
+	HAL_ADC_PollForConversion(&hadc1, 1000);
+	*ptrADCvalueFloat += (float)HAL_ADC_GetValue(&hadc1)/4095.0*3.3/nSamples;
+	}
+}
 /* USER CODE END 4 */
 
 /**
