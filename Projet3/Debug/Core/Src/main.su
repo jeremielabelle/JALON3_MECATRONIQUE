@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ../Core/Src/main.c:77:5:main	48	static
 ../Core/Src/main.c:174:6:SystemClock_Config	88	static
 ../Core/Src/main.c:222:13:MX_SPI3_Init	8	static
@@ -6,3 +7,15 @@
 ../Core/Src/main.c:322:13:MX_DMA_Init	16	static
 ../Core/Src/main.c:340:13:MX_GPIO_Init	48	static
 ../Core/Src/main.c:395:6:Error_Handler	4	static,ignoring_inline_asm
+=======
+../Core/Src/main.c:82:5:main	48	static
+../Core/Src/main.c:186:6:SystemClock_Config	88	static
+../Core/Src/main.c:234:13:MX_ADC1_Init	24	static
+../Core/Src/main.c:286:13:MX_SPI3_Init	8	static
+../Core/Src/main.c:324:13:MX_TIM10_Init	8	static
+../Core/Src/main.c:355:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:386:13:MX_DMA_Init	16	static
+../Core/Src/main.c:404:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:459:6:ADCconversion	32	static
+../Core/Src/main.c:474:6:Error_Handler	4	static,ignoring_inline_asm
+>>>>>>> branch 'master' of https://github.com/jeremielabelle/JALON3_MECATRONIQUE.git

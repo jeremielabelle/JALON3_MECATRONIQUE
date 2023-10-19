@@ -5,10 +5,12 @@
  *      Author: DJLAB
  */
 
+
 #ifndef INC_CONTROLSTEPMOTOR_H_
 #define INC_CONTROLSTEPMOTOR_H_
 
-#include "controlStepMotor.c"
-// Hi Vincent, here is a new file :)
+void fonctionControlMoteur(int direction);
+
+extern int matriceDemiPas[8][4];
 
 #endif /* INC_CONTROLSTEPMOTOR_H_ */

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ../Core/Src/stm32f4xx_it.c:70:6:NMI_Handler	1
 ../Core/Src/stm32f4xx_it.c:85:6:HardFault_Handler	1
 ../Core/Src/stm32f4xx_it.c:100:6:MemManage_Handler	1
@@ -8,3 +9,16 @@
 ../Core/Src/stm32f4xx_it.c:171:6:PendSV_Handler	1
 ../Core/Src/stm32f4xx_it.c:184:6:SysTick_Handler	1
 ../Core/Src/stm32f4xx_it.c:205:6:DMA1_Stream7_IRQHandler	1
+=======
+../Core/Src/stm32f4xx_it.c:71:6:NMI_Handler	1
+../Core/Src/stm32f4xx_it.c:86:6:HardFault_Handler	1
+../Core/Src/stm32f4xx_it.c:101:6:MemManage_Handler	1
+../Core/Src/stm32f4xx_it.c:116:6:BusFault_Handler	1
+../Core/Src/stm32f4xx_it.c:131:6:UsageFault_Handler	1
+../Core/Src/stm32f4xx_it.c:146:6:SVC_Handler	1
+../Core/Src/stm32f4xx_it.c:159:6:DebugMon_Handler	1
+../Core/Src/stm32f4xx_it.c:172:6:PendSV_Handler	1
+../Core/Src/stm32f4xx_it.c:185:6:SysTick_Handler	1
+../Core/Src/stm32f4xx_it.c:206:6:ADC_IRQHandler	1
+../Core/Src/stm32f4xx_it.c:220:6:DMA1_Stream7_IRQHandler	1
+>>>>>>> branch 'master' of https://github.com/jeremielabelle/JALON3_MECATRONIQUE.git

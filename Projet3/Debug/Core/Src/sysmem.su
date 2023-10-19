@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ../Core/Src/sysmem.c:54:7:_sbrk	32	static
+=======
+../Core/Src/sysmem.c:54:7:_sbrk	32	static
+>>>>>>> branch 'master' of https://github.com/jeremielabelle/JALON3_MECATRONIQUE.git
